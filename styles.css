@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.socials {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: env(safe-area-inset-bottom);
+  overflow: hidden;
+  background-color: #121110;
+
+  /*   ВЫСОТУ БЛОКА С ИКОНКАМИ РЕГУЛИРОВАТЬ ТУТ   */
+  height: 100vh;
+  height: 100svh;
+  /* ^ ВЫСОТУ БЛОКА С ИКОНКАМИ РЕГУЛИРОВАТЬ ТУТ ^ */
+}
+
+@supports (-webkit-touch-callout: none) {
+  .socials {
+    /*height: -webkit-fill-available;*/
+  }
+}
+
+.page_picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.socials__decor {
+  position: absolute;
+  display: block;
+  height: 100%;
+}
+
+.socials_bg {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.socials_bg--blur {
+  filter: blur(8px);
+  transition: filter 0.7s ease;
+}
+
+.socials__list {
+  position: relative;
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px 0;
+}
+
+.socials__concert {
+  top: 0;
+  position: absolute;
+  height: 100%;
+  max-width: calc(60svh - 80px);
+  padding: 40px 0;
+  pointer-events: auto;
+  animation: fadeIn 2.1s ease;
+}
+
+.socials__picture {
+    max-width: calc(60svh - 80px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.socials__item {
+  display: block;
+  position: relative;
+}
+
+.socials__link {
+  font: 5svh/1.2 Arial bold, sans-serif;
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 5px 6px rgba(0,0,0,0.7); /* темна тінь */
+  position: relative;
+  top: 1000px;
+  transition-duration: 0.2s;
+}
+
+.socials__link:hover {
+  opacity: 0.5;
+}
+
+.socials__link:active,
+.socials__link:focus {
+  opacity: 0.8;
+}
+
+.socials__links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials__items {
+   max-width: 200px;
+}
+
+.socials__buy {
+  position: relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.socials__buy--inner {
+position: absolute;
+top: 0;
+will-change: transform;
+  animation: bubble 1s ease forwards,
+  scalePulse 5s cubic-bezier(0.4,0,0.2,1) infinite;
+  max-width: 200px;
+}
+
+.socials__link--animation {
+  top: 50%;
+  animation: bubble ease-out;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes bubble {
+  0% {
+    top: 1000px;
+  }
+  75% {
+    top: 30%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+
+@keyframes scalePulse {
+  0%   { transform: scale3d(1,1,1); }
+  50%  { transform: scale3d(1.05,1.05,1); }
+  100% { transform: scale3d(1,1,1); }
+}
+
+.socials__item:nth-of-type(1) .socials__link {
+  animation-duration: 1.4s;
+}
+
+.socials__item:nth-of-type(2) .socials__link {
+  animation-duration: 1.6s;
+}
+
+.socials__item:nth-of-type(3) .socials__link {
+  animation-duration: 1.8s;
+}
+
+.socials__item:nth-of-type(4) .socials__link {
+  animation-duration: 2s;
+}
+
+.socials__item:nth-of-type(5) .socials__link {
+  animation-duration: 2.2s;
+}
+
+.socials__item:nth-of-type(6) .socials__link {
+  animation-duration: 2.4s;
+}
+
+.socials__item:nth-of-type(7) .socials__link {
+  animation-duration: 2.6s;
+}
+
+.socials__item:nth-of-type(8) .socials__link {
+  animation-duration: 2.8s;
+}
+
+.socials__item:nth-of-type(9) .socials__link {
+  animation-duration: 3s;
+}
+
+.socials__svgIcon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.socials__bottom {
+  position: absolute;
+  bottom: 10px;
+  width: 50px;
+  left: calc(60svh - 35px);
+}
+
+/*   ЕСЛИ ЗАХОЧЕТСЯ МЕНЯТЬ ЦВЕТ КАЖДОЙ ИКОНКИ ОТДЕЛЬНО   */
+/* 
+.socials__link--facebook {
+  color: #048be9;
+  background-color: #ff0000;
+}
+
+.socials__link--youtube {
+  color: #048be9;
+  background-color: #ff0000;
+}
+
+.socials__link--tiktok {
+  color: #ff0000;
+  background-color: #048be9;
+}
+
+.socials__link--instagram {
+  color: #ff0000;
+  background-color: #048be9;
+}
+
+.socials__link--telegram {
+  color: #048be9;
+  background-color: #ff0000;
+}
+
+.socials__link--googledoc {
+  color: #ff0000;
+  background-color: #048be9;
+} 
+*/
+/* ^ ЕСЛИ ЗАХОЧЕТСЯ МЕНЯТЬ ЦВЕТ КАЖДОЙ ИКОНКИ ОТДЕЛЬНО ^ */
+
+@media screen and (max-width: 450px) {
+  .socials {
+    width: 100vw;
+  }
+
+  .socials__concert {
+  max-width: calc(100vw - 40px);
+  padding: 20px 0;
+}
+
+.socials__link {
+  font: 1.888rem/1.2 Arial bold, sans-serif;
+}
+
+.socials__bottom {
+  right: 0;
+  left: unset;
+}
+}
