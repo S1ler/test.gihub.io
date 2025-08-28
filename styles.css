@@ -65,14 +65,13 @@ body {
   top: 0;
   position: absolute;
   height: 100%;
-  max-width: calc(60svh - 80px);
+  max-width: calc(68svh - 20px);
   padding: 40px 0;
   pointer-events: auto;
   animation: fadeIn 2.1s ease;
 }
 
 .socials__picture {
-    max-width: calc(60svh - 80px);
 }
 
 @keyframes fadeIn {
@@ -86,6 +85,8 @@ body {
 }
 
 .socials__link {
+  margin: 0;
+  padding: 0;
   font: 5svh/1.2 Arial bold, sans-serif;
   display: block;
   color: #ffffff;
@@ -109,17 +110,23 @@ body {
   list-style: none;
   padding: 0;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
   align-items: center;
 }
 
 .socials__items {
-   max-width: 200px;
+   max-width: 220px;
+}
+
+.socials__items .page__link {
+  display: flex;
+  height: 40px;
 }
 
 .socials__buy {
+  margin-top: 25px;
   position: relative;
   display:flex;
   justify-content: center;
@@ -206,8 +213,18 @@ will-change: transform;
 .socials__bottom {
   position: absolute;
   bottom: 10px;
-  width: 50px;
-  left: calc(60svh - 35px);
+  width: 40px;
+  left: calc(68svh - 10px);
+}
+
+.flex-direction-column {
+  flex-direction: column !important;
+}
+
+.socials__link--instagram {
+  will-change: contents;
+ animation: scalePulse 5s cubic-bezier(0.4,0,0.2,1) infinite;
+ animation-duration: 5s;
 }
 
 /*   ЕСЛИ ЗАХОЧЕТСЯ МЕНЯТЬ ЦВЕТ КАЖДОЙ ИКОНКИ ОТДЕЛЬНО   */
@@ -223,11 +240,6 @@ will-change: transform;
 }
 
 .socials__link--tiktok {
-  color: #ff0000;
-  background-color: #048be9;
-}
-
-.socials__link--instagram {
   color: #ff0000;
   background-color: #048be9;
 }
@@ -252,6 +264,14 @@ will-change: transform;
   .socials__concert {
   max-width: calc(100vw - 40px);
   padding: 20px 0;
+}
+
+.socials__links {
+  flex-direction: column;
+}
+
+.socials__buy {
+  margin-top: 10px;
 }
 
 .socials__link {

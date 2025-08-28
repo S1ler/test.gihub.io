@@ -28,7 +28,7 @@
       socialsImage.style.display = 'block';
       socialsBg.classList.add('socials_bg--blur');
     }
-  }, 4000);
+  }, 2000);
   }
 
   function intersectionCallback(target, entries, observer) {
