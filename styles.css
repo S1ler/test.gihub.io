@@ -235,7 +235,7 @@ will-change: transform;
 */
 /* ^ ЕСЛИ ЗАХОЧЕТСЯ МЕНЯТЬ ЦВЕТ КАЖДОЙ ИКОНКИ ОТДЕЛЬНО ^ */
 
-@media screen and (max-width: 926px) and (orientation: landscape) {
+@media screen and (max-width: 927px) and (orientation: landscape) {
   .socials {
     height: auto;
     min-height: 100svh;
