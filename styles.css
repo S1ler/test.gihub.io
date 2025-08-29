@@ -126,11 +126,7 @@ body {
   max-width: 220px;
   display: flex;
   height: 52px;
-  text-align: center;
-}
-
-.socials__items .page_picture{
-  display: inline-block;
+  justify-content: center;
 }
 
 .socials__buy {
