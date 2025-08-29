@@ -247,7 +247,6 @@ will-change: transform;
     max-width: calc(57vw - 40px);
     height: auto;
     padding: 0;
-    margin-bottom: 20px;
   }
 
   .socials__title {
@@ -265,16 +264,14 @@ will-change: transform;
     font: 1.5rem/1.2 Arial bold, sans-serif;
   }
 
-  .socials__buy {
-    margin-top: 15px;
-  }
-
   .socials__bottom {
-    position: relative;
-    bottom: unset;
-    right: unset;
+    position: absolute;
+    bottom: 0;
+    right: 0;
     left: unset;
-    margin-top: 15px;
+  }
+  .socials__buy--inner {
+  position: relative;
   }
 }
 
