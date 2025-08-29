@@ -305,6 +305,15 @@ body {
   .socials__links {
     flex-direction: column;
     gap: 5px;
+    outline: 1px solid red;
+  }
+
+  .socials__items{
+    outline: 1px solid blue;
+  }
+
+   .socials__items img{
+    outline: 3px solid green;
   }
 
   .socials__buy {
