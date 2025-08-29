@@ -47,7 +47,7 @@ body {
 }
 
 .socials_bg--blur {
-  filter: blur(6px);
+  filter: blur(4px);
   transition: filter 0.7s ease;
 }
 
