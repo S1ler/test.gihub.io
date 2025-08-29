@@ -11,24 +11,30 @@
   }
 })(function () {
   function animateSocialLinks() {
+       var socialsBlock = document.querySelector('.socials__title');
+    var socialsImage = document.querySelector('.socials__concert');
+    var socialsBg = document.querySelector('.socials_bg');
     var socialLinks = document.querySelectorAll('.socials__link');
     var ANIMATION_CLASS = 'socials__link--animation';
 
     socialLinks.forEach(function (oneLink) {
       oneLink.classList.add(ANIMATION_CLASS);
     });
+    socialsBlock.style.display = 'none';
+    socialsImage.style.display = 'block';
+    socialsBg.classList.add('socials_bg--blur');
 
-  setTimeout(function () {
-    var socialsBlock = document.querySelector('.socials__list');
+  /* setTimeout(function () {
+    var socialsBlock = document.querySelector('.socials__title');
     var socialsImage = document.querySelector('.socials__concert');
     var socialsBg = document.querySelector('.socials_bg');
     var socialsBuy = document.querySelector('.socials__buy--inner');
     if (socialsBlock && socialsImage) {
-      socialsBlock.style.display = 'none';
-      socialsImage.style.display = 'block';
+      //socialsBlock.style.display = 'none';
+      //socialsImage.style.display = 'block';
       socialsBg.classList.add('socials_bg--blur');
     }
-  }, 2000);
+  }, 2000); */
   }
 
   function intersectionCallback(target, entries, observer) {

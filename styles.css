@@ -23,7 +23,7 @@ body {
 
 @supports (-webkit-touch-callout: none) {
   .socials {
-    /*height: -webkit-fill-available;*/
+    /*height: -webkit-fill-available;*/ 
   }
 }
 
@@ -47,15 +47,15 @@ body {
 }
 
 .socials_bg--blur {
-  filter: blur(8px);
+  filter: blur(6px);
   transition: filter 0.7s ease;
 }
 
-.socials__list {
+.socials__title {
   position: relative;
   list-style-type: none;
   margin: 0;
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 30px 0;
@@ -65,13 +65,10 @@ body {
   top: 0;
   position: absolute;
   height: 100%;
-  max-width: calc(68svh - 20px);
+  max-width: calc(70svh - 20px);
   padding: 40px 0;
   pointer-events: auto;
   animation: fadeIn 2.1s ease;
-}
-
-.socials__picture {
 }
 
 @keyframes fadeIn {
@@ -93,8 +90,12 @@ body {
   text-align: center;
   text-shadow: 0 5px 6px rgba(0,0,0,0.7); /* темна тінь */
   position: relative;
-  top: 1000px;
-  transition-duration: 0.2s;
+  transition:none
+}
+
+.socials__link--animation {
+  animation: bubble ease-out;
+  animation-fill-mode: forwards;
 }
 
 .socials__link:hover {
@@ -111,7 +112,7 @@ body {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
   justify-content: center;
   align-items: center;
 }
@@ -122,7 +123,7 @@ body {
 
 .socials__items .page__link {
   display: flex;
-  height: 40px;
+  height: 52px;
 }
 
 .socials__buy {
@@ -141,12 +142,6 @@ will-change: transform;
   animation: bubble 1s ease forwards,
   scalePulse 5s cubic-bezier(0.4,0,0.2,1) infinite;
   max-width: 200px;
-}
-
-.socials__link--animation {
-  top: 50%;
-  animation: bubble ease-out;
-  animation-fill-mode: forwards;
 }
 
 
@@ -168,40 +163,12 @@ will-change: transform;
   100% { transform: scale3d(1,1,1); }
 }
 
-.socials__item:nth-of-type(1) .socials__link {
+.socials__link:nth-of-type(1).socials__link--animation {
   animation-duration: 1.4s;
 }
 
-.socials__item:nth-of-type(2) .socials__link {
+.socials__link:nth-of-type(2).socials__link--animation {
   animation-duration: 1.6s;
-}
-
-.socials__item:nth-of-type(3) .socials__link {
-  animation-duration: 1.8s;
-}
-
-.socials__item:nth-of-type(4) .socials__link {
-  animation-duration: 2s;
-}
-
-.socials__item:nth-of-type(5) .socials__link {
-  animation-duration: 2.2s;
-}
-
-.socials__item:nth-of-type(6) .socials__link {
-  animation-duration: 2.4s;
-}
-
-.socials__item:nth-of-type(7) .socials__link {
-  animation-duration: 2.6s;
-}
-
-.socials__item:nth-of-type(8) .socials__link {
-  animation-duration: 2.8s;
-}
-
-.socials__item:nth-of-type(9) .socials__link {
-  animation-duration: 3s;
 }
 
 .socials__svgIcon {
@@ -223,9 +190,21 @@ will-change: transform;
 
 .socials__link--instagram {
   will-change: contents;
- animation: scalePulse 5s cubic-bezier(0.4,0,0.2,1) infinite;
- animation-duration: 5s;
+ animation: scalePulseB 7s infinite !important;
 }
+
+@keyframes scalePulseB {
+  0% {
+    transform: scale(1);
+  }
+  28.57% {
+    transform: scale(1.1); /* збільшення за 2 секунди (2/7 ≈ 28.57%) */
+  }
+  100% {
+    transform: scale(1); /* зменшення за 5 секунд */
+  }
+}
+
 
 /*   ЕСЛИ ЗАХОЧЕТСЯ МЕНЯТЬ ЦВЕТ КАЖДОЙ ИКОНКИ ОТДЕЛЬНО   */
 /* 
@@ -268,6 +247,7 @@ will-change: transform;
 
 .socials__links {
   flex-direction: column;
+  gap: 5px;
 }
 
 .socials__buy {
