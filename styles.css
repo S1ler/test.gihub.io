@@ -23,7 +23,7 @@ body {
 
 @supports (-webkit-touch-callout: none) {
   .socials {
-    /*height: -webkit-fill-available;*/ 
+    /*height: -webkit-fill-available;*/
   }
 }
 
@@ -55,7 +55,7 @@ body {
   position: relative;
   list-style-type: none;
   margin: 0;
-  display: none;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 30px 0;
@@ -72,8 +72,13 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .socials__item {
@@ -88,9 +93,10 @@ body {
   display: block;
   color: #ffffff;
   text-align: center;
-  text-shadow: 0 5px 6px rgba(0,0,0,0.7); /* темна тінь */
+  text-shadow: 0 5px 6px rgba(0, 0, 0, 0.7);
+  /* темна тінь */
   position: relative;
-  transition:none
+  transition: none
 }
 
 .socials__link--animation {
@@ -108,8 +114,7 @@ body {
 }
 
 .socials__links {
-  list-style: none;
-  padding: 0;
+  margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
@@ -118,10 +123,7 @@ body {
 }
 
 .socials__items {
-   max-width: 220px;
-}
-
-.socials__items .page__link {
+  max-width: 220px;
   display: flex;
   height: 52px;
 }
@@ -129,18 +131,18 @@ body {
 .socials__buy {
   margin-top: 25px;
   position: relative;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
 
 .socials__buy--inner {
-position: absolute;
-top: 0;
-will-change: transform;
+  position: absolute;
+  top: 0;
+  will-change: transform;
   animation: bubble 1s ease forwards,
-  scalePulse 5s cubic-bezier(0.4,0,0.2,1) infinite;
+    scalePulse 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   max-width: 200px;
 }
 
@@ -149,18 +151,28 @@ will-change: transform;
   0% {
     top: 1000px;
   }
+
   75% {
     top: 30%;
   }
+
   100% {
     top: 50%;
   }
 }
 
 @keyframes scalePulse {
-  0%   { transform: scale3d(1,1,1); }
-  50%  { transform: scale3d(1.05,1.05,1); }
-  100% { transform: scale3d(1,1,1); }
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 .socials__link:nth-of-type(1).socials__link--animation {
@@ -190,18 +202,22 @@ will-change: transform;
 
 .socials__link--instagram {
   will-change: contents;
- animation: scalePulseB 7s infinite !important;
+  animation: scalePulseB 7s infinite !important;
 }
 
 @keyframes scalePulseB {
   0% {
     transform: scale(1);
   }
+
   28.57% {
-    transform: scale(1.1); /* збільшення за 2 секунди (2/7 ≈ 28.57%) */
+    transform: scale(1.1);
+    /* збільшення за 2 секунди (2/7 ≈ 28.57%) */
   }
+
   100% {
-    transform: scale(1); /* зменшення за 5 секунд */
+    transform: scale(1);
+    /* зменшення за 5 секунд */
   }
 }
 
@@ -270,8 +286,9 @@ will-change: transform;
     right: 0;
     left: unset;
   }
+
   .socials__buy--inner {
-  position: relative;
+    position: relative;
   }
 }
 
@@ -281,25 +298,25 @@ will-change: transform;
   }
 
   .socials__concert {
-  max-width: calc(100vw - 40px);
-  padding: 20px 0;
-}
+    max-width: calc(100vw - 40px);
+    padding: 20px 0;
+  }
 
-.socials__links {
-  flex-direction: column;
-  gap: 5px;
-}
+  .socials__links {
+    flex-direction: column;
+    gap: 5px;
+  }
 
-.socials__buy {
-  margin-top: 10px;
-}
+  .socials__buy {
+    margin-top: 10px;
+  }
 
-.socials__link {
-  font: 1.888rem/1.2 Arial bold, sans-serif;
-}
+  .socials__link {
+    font: 1.888rem/1.2 Arial bold, sans-serif;
+  }
 
-.socials__bottom {
-  right: 0;
-  left: unset;
-}
+  .socials__bottom {
+    right: 0;
+    left: unset;
+  }
 }
