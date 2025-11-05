@@ -271,43 +271,8 @@ body {
 }
 
 @media screen and (max-width: 986px) and (orientation: landscape) {
-  .socials {
-    height: auto;
-    min-height: 100svh;
-    padding: 20px 0;
-  }
-
   .socials__concert {
-    position: relative;
-    max-width: calc(57vw - 40px);
-    height: auto;
-    padding: 0;
-  }
-
-  .socials__title {
-    display: flex;
-  }
-
-  .socials__links {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-
-  .socials__link {
-    font: 1.5rem/1.2 Arial bold, sans-serif;
-  }
-
-  .socials__bottom {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: unset;
-  }
-
-  .socials__buy--inner {
-    position: relative;
+    padding: 20px 0;
   }
 }
 
