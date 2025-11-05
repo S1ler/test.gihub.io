@@ -44,7 +44,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  max-width: 500px;
+  max-width: 800px;
   padding-inline: 24px;
 }
 
@@ -273,34 +273,5 @@ body {
 @media screen and (max-width: 986px) and (orientation: landscape) {
   .socials__concert {
     padding: 20px 0;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .socials {
-    width: 100vw;
-  }
-
-  .socials__concert {
-    max-width: calc(100vw - 40px);
-    padding: 20px 0;
-  }
-
-  .socials__links {
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .socials__buy {
-    margin-top: 10px;
-  }
-
-  .socials__link {
-    font: 1.888rem/1.2 Arial bold, sans-serif;
-  }
-
-  .socials__bottom {
-    right: 0;
-    left: unset;
   }
 }
