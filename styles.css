@@ -86,7 +86,7 @@ body {
 }
 
 .socials__concert::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none; 
 }
 
 
@@ -233,44 +233,36 @@ body {
 
   28.57% {
     transform: scale(1.1);
-    /* збільшення за 2 секунди (2/7 ≈ 28.57%) */
   }
 
   100% {
     transform: scale(1);
-    /* зменшення за 5 секунд */
   }
 }
 
-
-/*   ЕСЛИ ЗАХОЧЕТСЯ МЕНЯТЬ ЦВЕТ КАЖДОЙ ИКОНКИ ОТДЕЛЬНО   */
-/* 
-.socials__link--facebook {
-  color: #048be9;
-  background-color: #ff0000;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.socials__link--youtube {
-  color: #048be9;
-  background-color: #ff0000;
+.social_ivent {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
 }
 
-.socials__link--tiktok {
-  color: #ff0000;
-  background-color: #048be9;
+.social_ivent:nth-child(1) {
+  animation-delay: 0.2s;
 }
 
-.socials__link--telegram {
-  color: #048be9;
-  background-color: #ff0000;
+.social_ivent:nth-child(2) {
+  animation-delay: 0.5s;
 }
-
-.socials__link--googledoc {
-  color: #ff0000;
-  background-color: #048be9;
-} 
-*/
-/* ^ ЕСЛИ ЗАХОЧЕТСЯ МЕНЯТЬ ЦВЕТ КАЖДОЙ ИКОНКИ ОТДЕЛЬНО ^ */
 
 @media screen and (max-width: 986px) and (orientation: landscape) {
   .socials {
