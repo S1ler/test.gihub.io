@@ -6,59 +6,154 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!--   ПОПЫТКА ВЛЮЧИТЬ ТЕМНУЮ ТЕМУ УСТРОЙСТВА   -->
-  <!-- Chrome, Firefox OS and Opera -->
   <meta name="theme-color" content="#121110">
-  <!-- Windows Phone -->
   <meta name="msapplication-navbutton-color" content="#121110">
-  <!-- iOS Safari -->
-  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="icon" type="image/png" href="favicon.png" />
-  <!-- ^ ПОПЫТКА ВЛЮЧИТЬ ТЕМНУЮ ТЕМУ УСТРОЙСТВА ^ -->
   <link rel="stylesheet" href="styles.css?v2" />
   <script src="script.js?v1"></script>
+
+  <style>
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal-line span {
+      display: inline-block;
+      opacity: 0;
+      animation: fadeUp 0.6s ease-out forwards;
+      color: white;
+      text-transform: uppercase;
+      font-size: 29px;
+      /* зроблено на 1 одиницю менше */
+      text-shadow:
+        -2px -2px 0 black,
+        2px -2px 0 black,
+        -2px 2px 0 black,
+        2px 2px 0 black,
+        0px -2px 0 black,
+        0px 2px 0 black,
+        -2px 0px 0 black,
+        2px 0px 0 black;
+    }
+
+    .reveal-line.line1 span:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .reveal-line.line1 span:nth-child(2) {
+      animation-delay: 0.05s;
+    }
+
+    .reveal-line.line1 span:nth-child(3) {
+      animation-delay: 0.1s;
+    }
+
+    .reveal-line.line2 span:nth-child(1) {
+      animation-delay: 0.3s;
+    }
+
+    .reveal-line.line2 span:nth-child(2) {
+      animation-delay: 0.35s;
+    }
+
+    .reveal-line.line2 span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .reveal-line.line2 span:nth-child(4) {
+      animation-delay: 0.9s;
+    }
+
+    .reveal-line.line2 span:nth-child(5) {
+      animation-delay: 0.95s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-line span {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!--   ОСНОВНОЙ БЛОК, КОТОРЫЙ НАДО ПЕРЕНЕСТИ В ПРОЕКТ   -->
   <div class="socials">
+    <div class="socials__wrapper">
     <div class="socials__decor">
-      <!--   АДРЕС КАРТИНКИ МЕНЯТЬ ТУТ   -->
       <img class="socials_bg" src="./images/background.jpg" alt="background piano" />
-      <!-- ^ АДРЕС КАРТИНКИ МЕНЯТЬ ТУТ ^ -->
     </div>
     <div class="socials__title flex-direction-column">
-        <div class="socials__link">З класичною музикою</div>
-        <div class="socials__link">світ стає добрішим😇</div>
+      <!--<div class="socials__link reveal-line line1">-->
+      <!--  <span>З</span> <span>класичною</span> <span>музикою</span>-->
+      <!--</div>-->
+      <!--<div class="socials__link reveal-line line2">-->
+      <!--  <span class="word1">світ</span> -->
+      <!--  <span class="word2">стає</span> -->
+      <!--  <span class="word3">добрішим</span>-->
+      <!--  <span class="emoji">:)</span>-->
+      <!--</div>-->
     </div>
     <div class="socials__concert" style="display: none;">
-      <div class="socials__picture">
-      <img class=" page_picture" src="./images/concert.png" alt="Фото">
+      <div class="social_ivent">
+        <div class="socials__picture">
+          <img class="page_picture" src="./images/concert.png" alt="Фото">
+        </div>
+        <div class="socials__links">
+          <!--<a href="https://widget.kontramarka.ua/uk/widget511site19/widget/event/152118?utm_referrer=lutsk.kontramarka.ua/uk/koncert-3-dotik-108785.html&siteShowId=108785&siteEventId=249583" target="_blank" class="page__link socials__items"><img src="./images/kontramarka.png" alt="посилання на kontramarka" class="socials__icon page_picture"></a>-->
+          <a href="https://lutsk.karabas.com/kontsert-beethoven-mozart-akademichnyy-symfonichnyy-orkestr-l-vivs-koi-natsional-noi-filarmonii-u-luts-ku/order/"
+            class="page__link socials__items"><img src="./images/buy-ticket.png" target="_blank"
+              alt="посилання на karabas" class="socials__icon page_picture"></a>
+          <!--<a href="https://concert.ua/uk/booking/koncert-3-dotik-lutsk/" class="page__link socials__items"><img src="./images/concert-ua.png" target="_blank" alt="посилання на concert-ua" class="socials__icon page_picture"></a>-->
+        </div>
+        <div class="socials__buy">
+          <!--<div class="socials__buy--inner">-->
+          <!--  <img src="./images/buy-ticket.png" class="page_picture" alt="купити квиток">-->
+          <!--</div>-->
+        </div>
       </div>
-      <div class="socials__links">
-        <a href="https://lutsk.kontramarka.ua/uk/koncert-3-dotik-108785.html" target="_blank" class="page__link socials__items"><img src="./images/kontramarka.png" alt="kontramarka link" class="socials__icon page_picture"></a>
-        <a href="https://lutsk.kontramarka.ua/uk/koncert-3-dotik-108785.html" class="page__link socials__items"><img src="./images/karabas.png" target="_blank" alt="karabas link" class="socials__icon page_picture"></a>
-        <a href="https://lutsk.kontramarka.ua/uk/koncert-3-dotik-108785.html" class="page__link socials__items"><img src="./images/concert-ua.png" target="_blank" alt="concert-ua link" class="socials__icon page_picture"></a>
-      </div> 
-      <div class="socials__buy">
-        <div class="socials__buy--inner">
-      <img src="./images/buy-ticket.png" class="page_picture" alt="buy ticket">
-      </div>
-      </div>
-       <div class="socials__bottom">
-        <a class="socials__link socials__link--instagram" target="_blank"
-          href="https://www.instagram.com/classicalmusic4u/">
-          <svg class="socials__svgIcon bi bi-instagram" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-            fill="currentColor" viewBox="0 0 16 16">
-            <path
-              d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
-          </svg>
-        </a>
+      <div class="social_ivent">
+        <div class="socials__picture">
+          <img class="page_picture" src="./images/concert.png" alt="Фото">
+        </div>
+        <div class="socials__links">
+          <!--<a href="https://widget.kontramarka.ua/uk/widget511site19/widget/event/152118?utm_referrer=lutsk.kontramarka.ua/uk/koncert-3-dotik-108785.html&siteShowId=108785&siteEventId=249583" target="_blank" class="page__link socials__items"><img src="./images/kontramarka.png" alt="посилання на kontramarka" class="socials__icon page_picture"></a>-->
+          <a href="https://lutsk.karabas.com/kontsert-beethoven-mozart-akademichnyy-symfonichnyy-orkestr-l-vivs-koi-natsional-noi-filarmonii-u-luts-ku/order/"
+            class="page__link socials__items"><img src="./images/buy-ticket.png" target="_blank"
+              alt="посилання на karabas" class="socials__icon page_picture"></a>
+          <!--<a href="https://concert.ua/uk/booking/koncert-3-dotik-lutsk/" class="page__link socials__items"><img src="./images/concert-ua.png" target="_blank" alt="посилання на concert-ua" class="socials__icon page_picture"></a>-->
+        </div>
+        <div class="socials__buy">
+          <!--<div class="socials__buy--inner">-->
+          <!--  <img src="./images/buy-ticket.png" class="page_picture" alt="купити квиток">-->
+          <!--</div>-->
+        </div>
       </div>
     </div>
+    <div class="socials__bottom">
+      <a class="socials__link socials__link--instagram" target="_blank"
+        href="https://www.instagram.com/classicalmusic4u/">
+        <!-- <svg class="socials__svgIcon bi bi-instagram" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+          fill="currentColor" viewBox="0 0 16 16">
+          <path
+            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+        </svg> -->
+        <img src="./images/instagram-icon.png" alt="instagram" class="socials__svgIcon">
+      </a>
+    </div>
   </div>
-  <!-- ^ ОСНОВНОЙ БЛОК, КОТОРЫЙ НАДО ПЕРЕНЕСТИ В ПРОЕКТ ^ -->
+</div>
 </body>
 
 </html>
