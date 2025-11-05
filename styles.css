@@ -275,3 +275,12 @@ body {
     padding: 20px 0;
   }
 }
+
+@media screen and (min-width: 500px) {
+  .socials__items {
+    max-width: 200px;
+    display: flex;
+    height: auto;
+    justify-content: center;
+  }
+}
