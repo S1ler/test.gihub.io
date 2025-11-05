@@ -72,6 +72,7 @@ body {
 }
 
 .socials__concert {
+  display: none;
   position: relative;
   height: 100%;
   width: 100%;
@@ -84,6 +85,11 @@ body {
   -ms-overflow-style: none;
 
 }
+
+.socials__concert > .social_ivent:not(:last-child) {
+  margin-bottom: 40px;
+}
+
 
 .socials__concert::-webkit-scrollbar {
   display: none; 
